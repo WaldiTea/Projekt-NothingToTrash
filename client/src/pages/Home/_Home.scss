@@ -1,0 +1,26 @@
+.home-title-section {
+  display: flex;
+  align-items: center;
+
+  .home-title {
+    font-size: 5.25rem;
+  }
+}
+
+.home-content-section {
+  .content-title {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .image-content-wrapper {
+    display: flex;
+
+    .figure {
+
+      img {
+        position: relative;
+      }
+    }
+  }
+}

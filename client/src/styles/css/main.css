@@ -1,0 +1,171 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(../../assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../../assets/fonts/Roboto-Bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto-Regular', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Roboto-Bold';
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+.App {
+  padding: 0 5.5rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  padding: 3rem 0;
+}
+
+.header .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12rem;
+}
+
+.header .nav-bar .logo {
+  font-size: 18px;
+}
+
+.header .nav-bar .link-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5rem;
+  margin-bottom: 0;
+}
+
+.header .login-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-purple {
+  background-color: #7854F7;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.button-blue {
+  background-color: #0E65F3;
+  width: 100%;
+  font-size: 24px;
+  padding: 0.75rem 0;
+}
+
+.formular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 26px 37px rgba(13, 22, 36, 0.363055);
+          box-shadow: 0px 26px 37px rgba(13, 22, 36, 0.363055);
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.formular .form-title {
+  margin-bottom: 4rem;
+}
+
+.input-field {
+  width: 36.5rem;
+  font-size: 1.5rem;
+  padding: 1rem 0 0.5rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.home-title-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-title-section .home-title {
+  font-size: 5.25rem;
+}
+
+.home-content-section .content-title {
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.home-content-section .image-content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-content-section .image-content-wrapper .figure img {
+  position: relative;
+}
+/*# sourceMappingURL=main.css.map */
