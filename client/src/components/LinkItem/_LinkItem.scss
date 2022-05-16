@@ -1,0 +1,13 @@
+@import '../../styles/sass/variables';
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s, transform 0.5s;
+
+  &:hover {
+    color: $default-color-hover;
+    transform: translateY(-5px);
+  }
+}

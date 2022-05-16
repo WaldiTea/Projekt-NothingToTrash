@@ -9,7 +9,6 @@ const { doAuthMiddleware } = require("../auth/doAuthMiddleware");
 
 const userRouter = express.Router()
 
-// Authentication Required!!! 
 userRouter.get("/all", doAuthMiddleware, async (_, res) => {
     try {
         const allUsers = await UserService.listAllUsers()
@@ -22,7 +21,7 @@ userRouter.get("/all", doAuthMiddleware, async (_, res) => {
 
 userRouter.get("/myProfileInfo", doAuthMiddleware, async (req, res) => {
     try {
-        const userId = req.userClaims.sub // an den token wird erkannt, um welchen user es sich handelt...
+        const userId = req.userClaims.sub
         const allUsers = await UserService.showProfileInfo({ userId })
         res.status(200).json(allUsers)
     } catch (err) {
@@ -54,7 +53,6 @@ userRouter.post("/login",
             })
 
             if(result.refreshToken) {
-                // result.refreshToken vom login in den session http only  cookie speichern
                 req.session.refreshToken = result.refreshToken
             }
             
@@ -66,8 +64,6 @@ userRouter.post("/login",
 )
 
 userRouter.post("/refreshtoken",
-    // body("refreshToken").isLength({ min: 10 }), // nur wenn wir keine cookie-session verwenden, dann MUSS der refreshToken im body sein...
-    // doValidations,
     async (req, res) => {
         try {
             const result = await UserService.refreshUserToken({
@@ -81,7 +77,6 @@ userRouter.post("/refreshtoken",
 )
 
 userRouter.post("/register",
-    // facade layer
     body("username").isLength({ min: 1, max: 25 }),
     body("email").isEmail(),
     body("password").isStrongPassword(),
@@ -91,7 +86,7 @@ userRouter.post("/register",
             const userInfo = req.body
             const result = await UserService.registerUser(userInfo)
 
-            res.status(201).json(result) // 201 ==> 'Created'
+            res.status(201).json(result)
         } catch (err) {
             console.log(err)
             res.status(500).json({ err: { message: err ? err.message : "Unknown error while registering a new account." } })
@@ -100,7 +95,6 @@ userRouter.post("/register",
 )
 
 userRouter.post("/verifyEmail", 
-    // facade layer
     body("email").isEmail(),
     body("sixDigitCode").isLength({ min: 6 }),
     doValidations,

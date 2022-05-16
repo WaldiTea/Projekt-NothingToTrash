@@ -1,20 +1,47 @@
 @import '../../styles/sass/variables';
 
-.button {
+.btn {
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
 
-.button-purple {
-  background-color: $purple;
-  font-size: 1rem;
-  padding: 1rem 1.5rem;
+.btn-md {
+  background-color: $purple-dark;
+  font-family: 'Roboto-Medium';
+  font-size: 0.875rem;
+  padding: 1rem 1.75rem;
+  transition: background-color 0.5s, transform 0.3s;
+
+  &:hover {
+    background-color: $purple-hover;
+    transform: scale(1.05);
+  }
 }
 
-.button-blue {
-  background-color: $blue-dark;
-  width: 100%;
-  font-size: 24px;
-  padding: 0.75rem 0;
+.btn-lg {
+  background-color: $purple-dark;
+  font-family: 'Roboto-Medium';
+  font-size: 1.125rem;
+  padding: 1.75rem 6rem;
+  transition: background-color 0.5s, transform 0.3s;
+
+  &:hover {
+    background-color: $purple-hover;
+    transform: scale(1.05);
+  }
+}
+
+.btn-orange {
+  background-color: $orange;
+  font-family: 'Roboto-Medium';
+  font-size: 1.125rem;
+  padding: 1.75rem 6rem;
+  transition: background-color 0.5s, transform 0.3s;
+
+  &:hover {
+    background-color: $orange;
+    transform: scale(1.05);
+  }
 }

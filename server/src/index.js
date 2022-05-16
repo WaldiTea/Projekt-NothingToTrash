@@ -1,18 +1,18 @@
-const express = require("express")
-const cors = require("cors")
-const morgan = require("morgan")
-const cookieSession = require("cookie-session")
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const cookieSession = require("cookie-session");
 
 const { userRouter } = require("./routes/user-routes");
 const { postsRouter } = require("./routes/posts-router");
 
-const PORT = process.env.PORT || 9000
-const app = express()
+const PORT = process.env.PORT || 9000;
+const app = express();
 
-app.use(cors({ origin: [process.env.FRONTEND_URL], credentials: true }))         // cors
-const oneDayInMs = 24 * 60 * 60 * 1000;
-const isLocalHost = process.env.FRONTEND_URL === 'http://localhost:3000';
-app.set('trust proxy', 1); // trust first proxy
+app.use(cors({ origin: [process.env.FRONTEND_URL], credentials: true }));
+/* const oneDayInMs = 24 * 60 * 60 * 1000;
+const isLocalHost = process.env.FRONTEND_URL === 'http://localhost:3000'; */
+app.set('trust proxy', 1);
 /* app.use(
   cookieSession({
     name: 'session',
@@ -24,22 +24,14 @@ app.set('trust proxy', 1); // trust first proxy
   })
 ); */
 
-app.use(morgan('dev'))
-app.use(express.json()) // body parser
+app.use(morgan('dev'));
+app.use(express.json());
 
-app.use((req, _, next) => {
-  console.log(req.protocol + '://' + req.get('host') + req.url);
-  console.log('new request:', req.method, req.url);
-  next();
+app.get("/", (_, res) => {
+    res.send("it works :)");
 });
 
-// Routes...
+app.use("/api/users", userRouter);
+app.use("/api/posts", postsRouter);
 
-app.get("/", (req, res) => {
-    res.send("it works :)")
-})
-
-app.use("/api/users", userRouter) // alle users routes
-app.use("/api/posts", postsRouter) // alle posts routes
-
-app.listen(PORT, () => console.log("Server ready at", PORT))
+app.listen(PORT, () => console.log("Server ready at", PORT));

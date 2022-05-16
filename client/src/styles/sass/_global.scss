@@ -1,3 +1,5 @@
+@import './variables';
+
 @font-face {
   font-family: Roboto-Regular;
   src: url(../../assets/fonts/Roboto-Regular.ttf);
@@ -21,28 +23,22 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   font-family: 'Roboto-Regular', sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  color: $default-color;
+}
+
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: 'Roboto-Bold';
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 img {
   width: 100%;
-}
-
-.App {
-  padding: 0 5.5rem;
 }
